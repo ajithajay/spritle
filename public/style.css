@@ -1,0 +1,198 @@
+.input {
+  padding: 10px;
+  border-radius: 14px;
+  border: 2px solid transparent;
+  background: rgb(240, 243, 244);
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.25s ease;
+  font-size: 0.9rem;
+  text-align: center;
+}
+.input:hover {
+  border: 2px solid rgb(0, 0, 0, 0.1);
+}
+.input:focus {
+  border-color: rgb(25, 91, 255);
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.btn {
+  padding: 12px 22px;
+  border-radius: 16px;
+  border: 0px;
+  background: rgb(25, 91, 255);
+  color: #fff;
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.25s ease;
+  outline: none;
+  cursor: pointer;
+}
+.btn:hover {
+  transform: translate(0, -6px);
+  box-shadow: 0px 5px 10px 0px rgb(25, 91, 255, 0.4);
+}
+.btn:active {
+  transform: translate(0, -3px);
+  box-shadow: 0px 5px 10px 0px rgb(25, 91, 255, 0.6);
+}
+.textarea {
+  padding: 10px;
+  resize: none;
+  outline: none;
+  border-radius: 14px;
+  transition: all 0.25s ease;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  min-width: 200px;
+  font-weight: 500;
+  background: rgb(240, 243, 244);
+  border: 2px solid rgba(0, 0, 0, 0);
+}
+.textarea:hover {
+  border: 2px solid rgba(0, 0, 0, 0.1);
+}
+.textarea:focus {
+  border-color: rgb(25, 91, 255);
+}
+.textarea::placeholder {
+  color: rgba(0, 0, 0, 0.4);
+}
+.table {
+  border-radius: 15px;
+  box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.5);
+  border-collapse: collapse;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.85rem;
+  overflow: hidden;
+}
+.table th {
+  padding: 10px 15px;
+  text-align: left;
+  background: rgb(240, 243, 244);
+  color: rgba(0, 0, 0, 0.6);
+  font-weight: 500;
+}
+.table td {
+  padding: 12px 20px;
+}
+.table tr {
+  cursor: pointer;
+  transition: all 0.25s ease;
+  color: rgba(0, 0, 0, 0.6);
+}
+.table tr:hover {
+  background: rgba(25, 91, 255, 0.1);
+  color: rgba(25, 91, 255);
+}
+.link {
+  text-decoration: none;
+  display: block;
+  position: relative;
+  font-family: 'Poppins', sans-serif;
+  color: rgba(25, 91, 255);
+  transition: all 0.25s ease;
+}
+.link::after {
+  content: '';
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%);
+  background: rgba(25, 91, 255);
+  transition: all 0.25s ease;
+  height: 2px;
+  bottom: -2px;
+  width: 0px;
+}
+.link:hover:after {
+  width: 100%;
+}
+.label-check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  user-select: none;
+  font-family: 'Poppins', sans-serif;
+  cursor: pointer;
+}
+.label-check input {
+  opacity: 0;
+  position: absolute;
+}
+.checked {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  background: rgb(230, 233, 234);
+  transition: all 0.25s ease;
+  margin-right: 10px;
+  box-shadow: 0px 0px 0px 0px rgba(25, 91, 255, 0.45);
+}
+.checked i {
+  opacity: 0;
+  transform: scale(0.4);
+  transition: all 0.25s ease;
+  color: #fff;
+}
+.label-check input:checked ~ .checked {
+  background: rgb(25, 91, 255);
+  box-shadow: 0px 5px 10px 0px rgb(25, 91, 255, 0.45);
+  transform: translate(0, -4px);
+}
+.label-check input:checked ~ .checked i {
+  opacity: 1;
+  transform: scale(1);
+}
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+  background-color: rgb(240, 243, 244);
+}
+
+.main {
+  text-align: center;
+  background-color: #fff;
+  width: 400px;
+  margin: 7em auto;
+  padding: 50px;
+  border-radius: 1.5em;
+  box-shadow: 0px 11px 35px 2px rgba(0, 0, 0, 0.14);
+}
+
+.title {
+  color: rgba(25, 91, 255);
+  font-family: 'Ubuntu', sans-serif;
+  font-weight: bold;
+  font-size: 23px;
+}
+
+.submit {
+  cursor: pointer;
+  border-radius: 5em;
+  color: #fff;
+  background: linear-gradient(to right, rgb(25, 91, 255), #2196f3);
+  border: 0;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-family: 'Ubuntu', sans-serif;
+
+  font-size: 13px;
+  box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.04);
+}
+
+a {
+  text-shadow: 0px 0px 3px rgba(117, 117, 117, 0.12);
+  color: #2196f3;
+  text-decoration: none;
+}
+@media (max-width: 600px) {
+  .main {
+    border-radius: 0px;
+  }
+}

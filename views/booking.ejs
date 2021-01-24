@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="main">
+        <a href="/logout">Logout</a> | <a href="/train">Train List</a>
+        <h1 class="link">Booking - <%= train.name%> [<%= train.seat.length%>]
+
+        </h1>
+        <table class="table" id="table" align="center" border="1px">
+            <tr>
+                <th>WS</th>
+                <th>MS</th>
+                <th>AS</th>
+                <th>AS</th>
+                <th>MS</th>
+                <th>WS</th>
+            </tr>
+        </table>
+        <br>
+        <br>
+
+        <form action='/booking/<%= train._id%>' method="POST">
+            <input type="number" min="1" id="age" class="input" name="age" placeholder="Age">
+            <select name="gender" id="gender" class="input">
+                <option value="M">Male</option>
+                <option value="F">Female</option>
+            </select>
+            <br>
+            <br>
+            <button class="btn">Book</button>
+        </form>
+        <%if (locals.msg) { %>
+            <script language="javascript">
+                alert("<%= msg %>");
+            </script>
+
+            <% } %>
+    </div>
+</body>
+
+<script>
+    createTrain();
+    function createTrain() {
+        const data = JSON.parse('<%- JSON.stringify(train) %>');
+        let table = document.getElementById("table");
+        //table.innerHTML = '';
+        let seatNo = 0;
+        for (let i = 1; i <= data.row; i++) {
+            let tableRow = document.createElement('tr');
+            for (let j = 1; j <= data.column; j++) {
+
+                let cell = document.createElement('td');
+                let text;
+                if (data.seat[seatNo].booked) {
+                   // text = document.createTextNode(data.seat[seatNo].gender + '[' + data.seat[seatNo].age + ']');
+                    text = document.createTextNode(data.seat[seatNo].gender + '[' + data.seat[seatNo].age + ']');
+                    if (data.seat[seatNo].gender == 'M') {
+                        cell.style.background = "#ff7b54";
+                    } else {
+                        cell.style.background = "#939b62";
+                    }
+                    cell.style.color = "#fff";
+
+                } else {
+                    text = document.createTextNode(data.seat[seatNo].no);
+                }
+
+
+                cell.appendChild(text);
+                tableRow.appendChild(cell);
+                table.appendChild(tableRow);
+                seatNo++;
+            }
+        }
+    }
+</script>
+
+</html>

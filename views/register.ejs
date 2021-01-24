@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="../style.css">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+
+</head>
+
+<body>
+    <div class="main">
+        <p class="title">
+            Register
+        </p>
+        <form action="/register" method="POST">
+            <input type="text" class="input" id="username" name="username" placeholder="Username"><br><br>
+            <input type="password" class="input" id="password" name="password" placeholder="Password"><br> <br>
+            <label class="label-check" for="check2">
+                <input type="checkbox" value="admin" name="role" id="check2" />
+                <div class="checked">
+                    <i class="bx bx-check"></i>
+                </div>
+                Super Admin
+            </label>
+            <br>
+            <button class="submit">Submit</button>
+        </form><br>
+        <a href="/">Home</a> |
+        <a href="/login">login</a>
+
+    </div>
+</body>

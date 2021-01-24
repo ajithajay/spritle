@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Train</title>
+    <link rel="stylesheet" href="style.css">
+
+
+</head>
+
+<body>
+    <div class="main">
+        <a href="/logout">Logout</a>
+        <%if (isAdmin) { %>
+            <h1 class="link">Train</h1>
+            <form action="" method="POST">
+                <input type="text" name="name" id="name" class="input" placeholder="Name" required>
+                <br>
+                <br>
+                <input type="number" min="1" value="1" name="row" id="row" class="input" placeholder="Row" required>
+                <br>
+                <br>
+                <button class="btn" id="add-train">Create Compartment </button>
+            </form>
+            <% } %>
+
+
+
+                <h1 class="link">Train List</h1>
+                <table class="table" style="width: 100%;">
+                    <% if (locals.train.length> 0) { train.forEach(function(t){ %>
+                        <tr>
+                            <td>Name : <%= t.name %>
+                            </td>
+                            <td> Seats : <%= t.seat.length %>
+                            </td>
+                            <td>
+                                <a href="booking/<%= t._id %>">Book Now</a>
+                            </td>
+
+
+
+                        </tr>
+                        <% });} else{ %>
+                            <h3>No Train Available </h3>
+                            <% } %>
+
+                </table>
+
+
+    </div>
+</body>
+
+</html>
