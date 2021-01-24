@@ -11,7 +11,7 @@ const { protect, authorize } = require('./middleware/auth');
 const { getTrains, getTrain, createTrain, newBooking} = require('./controller/train');
 
 // Load ENV variable
-dotenv.config({ path: './config/config.env' });
+//dotenv.config({ path: './config/config.env' });
 
 // DB Connect
 mongoose.set('useNewUrlParser', true); 
