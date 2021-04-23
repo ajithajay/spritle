@@ -92,7 +92,7 @@ app.post("/train",protect,authorize("admin"),createTrain)
 app.get("/booking/:id",protect,getTrain);
 app.post("/booking/:id",protect,newBooking);
   
-var port = process.env.PORT || 3000; 
+var port = process.env.PORT || 3001; 
 app.listen(port, function () { 
     console.log("Server Has Started!"); 
 }); 
